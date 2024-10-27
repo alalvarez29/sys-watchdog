@@ -1,0 +1,2 @@
+[dependencies]
+sysinfo = "0.32"
