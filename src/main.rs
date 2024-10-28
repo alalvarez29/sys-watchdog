@@ -1,5 +1,22 @@
 use sysinfo::{System, Networks};
 use std::io::{self, Write};
+use std::time::Duration;
+use std::thread;
+use std::collections::HashMap;
+
+const UPDATE_INTERVAL: Duration = Duration::from_secs(1);
+const BYTE_UNITS: [&str; 4] = ["B/s", "KB/s", "MB/s", "GB/s"];
+const BYTER_PER_UNIT: f64 = 1024.0;
+const ASCII_ART: &str = r#"
+                                  _       _         _             
+ ___ _   _ ___     __      ____ _| |_ ___| |__   __| | ___   __ _ 
+/ __| | | / __|____\ \ /\ / / _` | __/ __| '_ \ / _` |/ _ \ / _` |
+\__ \ |_| \__ \_____\ V  V / (_| | || (__| | | | (_| | (_) | (_| |
+|___/\__, |___/      \_/\_/ \__,_|\__\___|_| |_|\__,_|\___/ \__, |
+     |___/                                                  |___/ 
+
+Created by: Anderson Álvarez
+"#;
 
 fn format_bytes(bytes: f64) -> String {
     const UNITS: [&str; 4] = ["B/s", "KB/s", "MB/s", "GB/s"];
@@ -15,17 +32,6 @@ fn format_bytes(bytes: f64) -> String {
 }
 
 fn main() {
-    let alien_art = r#"
-                                  _       _         _             
- ___ _   _ ___     __      ____ _| |_ ___| |__   __| | ___   __ _ 
-/ __| | | / __|____\ \ /\ / / _` | __/ __| '_ \ / _` |/ _ \ / _` |
-\__ \ |_| \__ \_____\ V  V / (_| | || (__| | | | (_| | (_) | (_| |
-|___/\__, |___/      \_/\_/ \__,_|\__\___|_| |_|\__,_|\___/ \__, |
-     |___/                                                  |___/ 
-
-Created by: Anderson Álvarez
-"#;
-
     let mut sys = System::new();
     
     print!("\x1B[2J\x1B[1;1H");
