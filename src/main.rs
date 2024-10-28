@@ -42,6 +42,30 @@ impl NetworkInterface
     }    
 }
 
+struct SystemMetrics
+{
+    network_interfaces: HashMap<String, NetworkInterface>,
+    cpu_usage: f32,
+    ram_usage: f32,
+    used_ram: u64,
+    total_ram: u64,
+}
+
+impl SystemMetrics
+{
+    fn new() -> Self
+    {
+        Self
+        {
+            network_interfaces: HashMap::new(),
+            cpu_usage: 0.0,
+            ram_usage: 0.0,
+            used_ram: 0,
+            total_ram: 0,
+        }    
+    }
+}
+
 fn format_bytes(bytes: f64) -> String {
     const UNITS: [&str; 4] = ["B/s", "KB/s", "MB/s", "GB/s"];
     let mut bytes = bytes;
