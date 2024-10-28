@@ -2,10 +2,23 @@ use sysinfo::System;
 use std::io::{self, Write};
 
 fn main() {
+    
+    let alien_art = r#"
+                                  _       _         _             
+ ___ _   _ ___     __      ____ _| |_ ___| |__   __| | ___   __ _ 
+/ __| | | / __|____\ \ /\ / / _` | __/ __| '_ \ / _` |/ _ \ / _` |
+\__ \ |_| \__ \_____\ V  V / (_| | || (__| | | | (_| | (_) | (_| |
+|___/\__, |___/      \_/\_/ \__,_|\__\___|_| |_|\__,_|\___/ \__, |
+     |___/                                                  |___/ 
+
+Created by: Anderson Álvarez
+"#;
+
     //Initialize system
     let mut sys = System::new();
 
     print!("\x1B[2J\x1B[1;1H");
+    println!("{}", alien_art);
     println!("Monitoring system...");
 
     loop {
@@ -24,7 +37,7 @@ fn main() {
         
         //Print the info
         print!("CPU: {:.1}% | RAM: {:.1}% ({} MB / {} MB)", 
-               cpu_usage, ram_usage, used_ram, total_ram);
+        cpu_usage, ram_usage, used_ram, total_ram);
 
         io::stdout().flush().unwrap();
 
