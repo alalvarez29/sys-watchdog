@@ -18,6 +18,30 @@ const ASCII_ART: &str = r#"
 Created by: Anderson Álvarez
 "#;
 
+struct NetworkInterface
+{
+    name: String,
+    rx_speed: f64,
+    tx_speed: f64,
+    prev_rx: u64,
+    prev_tx: u64,
+}
+
+impl NetworkInterface
+{
+    fn new(name: String) -> Self
+    {
+        Self
+        {
+            name,
+            rx_speed: 0.0,
+            tx_speed: 0.0,
+            prev_rx: 0,
+            prex_tx: 0,
+        }    
+    }    
+}
+
 fn format_bytes(bytes: f64) -> String {
     const UNITS: [&str; 4] = ["B/s", "KB/s", "MB/s", "GB/s"];
     let mut bytes = bytes;
