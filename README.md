@@ -1,5 +1,14 @@
 # System-Watchdog
 
+```
+                                  _       _         _             
+ ___ _   _ ___     __      ____ _| |_ ___| |__   __| | ___   __ _ 
+/ __| | | / __|____\ \ /\ / / _` | __/ __| '_ \ / _` |/ _ \ / _` |
+\__ \ |_| \__ \_____\ V  V / (_| | || (__| | | | (_| | (_) | (_| |
+|___/\__, |___/      \_/\_/ \__,_|\__\___|_| |_|\__,_|\___/ \__, |
+     |___/                                                  |___/ 
+```
+
 System-Watchdog aka sys-watchdog. This Rust program monitors CPU usage, RAM and network interface speed in real-time, updating and displaying the data in the console.
 
 ## Contents
