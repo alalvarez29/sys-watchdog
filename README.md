@@ -11,6 +11,13 @@
 
 System-Watchdog aka sys-watchdog. This Rust program monitors CPU usage, RAM and network interface speed in real-time, updating and displaying the data in the console.
 
+## Features
+- Real-time CPU monitoring
+- Monitoring of RAM usage
+- Tracking of network traffic (incoming/outgoing)
+- Automatic updates every second
+- Command-line interface with readable formatting
+
 ## Contents
 
 - [Dependencies](#dependencies)
