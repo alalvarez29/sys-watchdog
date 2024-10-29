@@ -70,3 +70,20 @@ The `format_bytes()` function makes it easier for users to understand network sp
 ## Usage
 
 ## Conclusions
+
+1. **Design Efficiency**
+   - The use of Rust ensures optimal performance and memory safety
+   - Modular structure allows for easy code maintainability
+   - The program achieves real-time monitoring with minimal system impact
+
+2. **Robust Functionality**
+   - Effective monitoring of critical metrics (CPU, RAM, Network)
+   - Real-time updates without screen flicker
+   - Intelligent data formatting for better readability
+   - Efficient handling of multiple network interfaces
+
+3. **Technical Implementation**
+   - Effective use of data structures (HashMap for interfaces)
+   - Proper error handling using Result
+   - Consistent metric updates every second
+   - Clean and well-organized code
