@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 const UPDATE_INTERVAL: Duration = Duration::from_secs(1);
 const BYTE_UNITS: [&str; 4] = ["B/s", "KB/s", "MB/s", "GB/s"];
-const BYTER_PER_UNIT: f64 = 1024.0;
+const BYTES_PER_UNIT: f64 = 1024.0;
 const ASCII_ART: &str = r#"
                                   _       _         _             
  ___ _   _ ___     __      ____ _| |_ ___| |__   __| | ___   __ _ 
@@ -37,7 +37,7 @@ impl NetworkInterface
             rx_speed: 0.0,
             tx_speed: 0.0,
             prev_rx: 0,
-            prex_tx: 0,
+            prev_tx: 0,
         }    
     }    
 }
@@ -71,7 +71,7 @@ impl SystemMetrics
         {
             let interface = self.network_interfaces
                 .entry(name.to_string())
-                or_insert_with(|| NetworkInterface::new(name.to_string()));
+                .or_insert_with(|| NetworkInterface::new(name.to_string()));
 
             let curr_rx = data.received();
             let curr_tx = data.transmitted();
