@@ -69,6 +69,88 @@ The `format_bytes()` function makes it easier for users to understand network sp
 
 ## Usage
 
+### 1. Install Rust and Cargo
+```bash
+# Install rustup (Rust installer)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rust-lang.org | sh
+
+# Verify installation
+rustc --version
+cargo --version
+```
+
+### 2. Clone the Repository
+```bash
+# Using HTTPS
+git clone https://github.com/yourusername/system-monitor.git
+
+# Using SSH
+git clone git@github.com:yourusername/system-monitor.git
+
+# Navigate to project directory
+cd system-monitor
+```
+
+### 3. Build the Project
+```bash
+# Development build
+cargo build
+
+# Release build (optimized)
+cargo build --release
+```
+
+### 4. Run the Program
+```bash
+# Run development version
+cargo run
+
+# Run release version
+./target/release/system-monitor
+```
+
+## Platform-Specific Instructions
+
+### Linux
+```bash
+# Install build essentials
+sudo apt update
+sudo apt install build-essential
+
+# Install required system libraries
+sudo apt install libssl-dev pkg-config
+```
+
+### macOS
+```bash
+# Install Xcode Command Line Tools
+xcode-select --install
+
+# Install Homebrew (if needed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Windows
+```powershell
+# Install Visual Studio Build Tools
+winget install Microsoft.VisualStudio.BuildTools
+```
+
+## Permissions
+
+### Linux
+```bash
+# If needed, add user to necessary groups for system monitoring
+sudo usermod -a -G systemd-journal $USER
+sudo usermod -a -G netdev $USER
+```
+
+### macOS
+- System Monitoring permissions might need to be granted in System Preferences
+
+### Windows
+- Run as Administrator might be required for full functionality
+
 ## Conclusions
 
 1. **Design Efficiency**
