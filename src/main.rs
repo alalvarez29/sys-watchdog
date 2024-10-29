@@ -64,14 +64,71 @@ impl SystemMetrics
             total_ram: 0,
         }    
     }
+
+    fn update(&mut self, sys: &System, networks: &Networks)
+    {
+        for(name, data) in networks.iter()
+        {
+            let interface = self.network_interfaces
+                .entry(name.to_string())
+                or_insert_with(|| NetworkInterface::new(name.to_string()));
+
+            let curr_rx = data.received();
+            let curr_tx = data.transmitted();
+
+            interface.rx_speed = (curr_rx.saturating_sub(interface.prev_rx)) as f64;
+            interface.tx_speed = (curr_tx.saturating_sub(interface.prev_tx)) as f64;
+            
+            interface.prev_rx = curr_rx;
+            interface.prev_tx = curr_tx;
+        }
+
+        self.cpu_usage = sys.global_cpu_info().cpu_usage();
+        self.total_ram = sys.total_memory() / 1024 / 1024;
+        self.used_ram = (sys.total_memory() - sys.available_memory()) / 1024 / 1024;
+        self.ram_usage = (self.used_ram as f32 / self.total_ram as f32) * 100.0;
+
+    }
+
+    fn display(&self) -> io::Result<()> 
+    {
+        // Mover el cursor al inicio de la línea y limpiar la línea
+        print!("\r\x1B[K");
+        
+        let mut output = format!(
+            "CPU: {:.1}% | RAM: {:.1}% ({} MB / {} MB)", 
+            self.cpu_usage,
+            self.ram_usage,
+            self.used_ram,
+            self.total_ram
+        );
+
+        for interface in self.network_interfaces.values()
+        {
+            if interface.rx_speed > 0.0 || interface.tx_speed > 0.0
+            {
+                output.push_str(&format!(
+                    " | {} ↓ {} ↑ {}", 
+                    interface.name,
+                    format_bytes(interface.rx_speed),
+                    format_bytes(interface.tx_speed)
+                ));
+            }
+        }
+
+        print!("{}", output);
+        io::stdout().flush()
+    }
 }
 
-fn format_bytes(bytes: f64) -> String {
+fn format_bytes(bytes: f64) -> String
+{
     const UNITS: [&str; 4] = ["B/s", "KB/s", "MB/s", "GB/s"];
     let mut bytes = bytes;
     let mut unit_index = 0;
 
-    while bytes >= 1024.0 && unit_index < UNITS.len() - 1 {
+    while bytes >= 1024.0 && unit_index < UNITS.len() - 1 
+    {
         bytes /= 1024.0;
         unit_index += 1;
     }
