@@ -82,13 +82,13 @@ cargo --version
 ### 2. Clone the Repository
 ```bash
 # Using HTTPS
-git clone https://github.com/yourusername/system-monitor.git
+git clone https://github.com/alalvarez29/sys-watchdog.git
 
 # Using SSH
-git clone git@github.com:yourusername/system-monitor.git
+git clone git@github.com:alalvarez29/sys-watchdog.git
 
 # Navigate to project directory
-cd system-monitor
+cd sys-watchdog
 ```
 
 ### 3. Build the Project
@@ -106,7 +106,7 @@ cargo build --release
 cargo run
 
 # Run release version
-./target/release/system-monitor
+./target/release/sys-watchdog
 ```
 
 ## Platform-Specific Instructions
