@@ -121,19 +121,15 @@ impl SystemMetrics
     }
 }
 
-fn format_bytes(bytes: f64) -> String
+fn format_bytes(mut bytes: f64) -> String
 {
-    const UNITS: [&str; 4] = ["B/s", "KB/s", "MB/s", "GB/s"];
-    let mut bytes = bytes;
     let mut unit_index = 0;
-
-    while bytes >= 1024.0 && unit_index < UNITS.len() - 1 
+    while bytes >= BYTES_PER_UNIT && unit_index < BYTE_UNITS.len() - 1
     {
-        bytes /= 1024.0;
+        bytes /= BYTES_PER_UNIT;
         unit_index += 1;
     }
-
-    format!("{:.1}{}", bytes, UNITS[unit_index])
+    format!("{:.1}{}", bytes, BYTE_UNITS[unit_index])
 }
 
 fn main() {
