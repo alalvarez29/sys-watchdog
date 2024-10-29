@@ -8,7 +8,7 @@ System-Watchdog aka sys-watchdog. This Rust program monitors CPU usage, RAM and 
     - [sysinfo](#sysinfo)
 - [Architecture](#architecture)
     - [NetworkInterface struct](#networkinterface-struct)
-    - [SystemMetrics struc](#systemmetrics-struct)
+    - [SystemMetrics struct](#systemmetrics-struct)
 - [Functions](#functions)
     - [main](#main)
     - [update](#update)
