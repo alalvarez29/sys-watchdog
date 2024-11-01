@@ -29,6 +29,7 @@ struct NetworkInterface
 
 impl NetworkInterface
 {
+    #[inline]
     fn new(name: String) -> Self
     {
         Self
@@ -65,6 +66,7 @@ impl SystemMetrics
         }    
     }
 
+    #[inline]
     fn update(&mut self, sys: &System, networks: &Networks)
     {
         for(name, data) in networks.iter()
@@ -126,6 +128,7 @@ impl SystemMetrics
     }
 }
 
+#[inline]
 fn format_bytes(mut bytes: f64) -> String
 {
     let mut unit_index = 0;
