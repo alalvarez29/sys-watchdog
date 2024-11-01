@@ -71,7 +71,13 @@ impl SystemMetrics
         {
             let interface = self.network_interfaces
                 .entry(name.to_string())
-                .or_insert_with(|| NetworkInterface::new(name.to_string()));
+                .or_insert_with(||
+                {
+                    let mut new_interface = NetworkInterface::new(name.to_string());
+                    new_interface.prev_rx = data.received();
+                    new_interface.prev_tx = data.transmitted();
+                    new_interface
+                });                
 
             let curr_rx = data.received();
             let curr_tx = data.transmitted();
