@@ -1,0 +1,11 @@
+/home/uqbarcitizen/rustprojects/sys-watchdog/target/debug/deps/libctrlc-928d28774a6a77ca.rmeta: /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/lib.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/error.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/platform/mod.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/platform/unix/mod.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/signal.rs
+
+/home/uqbarcitizen/rustprojects/sys-watchdog/target/debug/deps/libctrlc-928d28774a6a77ca.rlib: /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/lib.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/error.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/platform/mod.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/platform/unix/mod.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/signal.rs
+
+/home/uqbarcitizen/rustprojects/sys-watchdog/target/debug/deps/ctrlc-928d28774a6a77ca.d: /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/lib.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/error.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/platform/mod.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/platform/unix/mod.rs /home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/signal.rs
+
+/home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/lib.rs:
+/home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/error.rs:
+/home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/platform/mod.rs:
+/home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/platform/unix/mod.rs:
+/home/uqbarcitizen/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ctrlc-3.4.5/src/signal.rs:
